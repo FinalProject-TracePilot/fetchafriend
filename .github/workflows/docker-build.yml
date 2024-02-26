@@ -2,7 +2,7 @@ name: Enhanced Build and Push Docker Images
 
 on:
   push:
-    branches: [ imagedemo ] # Trigger on push to specific branch
+    branches: [ master ] # Trigger on push to specific branch
 
 jobs:
   build-and-push:
