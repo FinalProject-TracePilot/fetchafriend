@@ -5,9 +5,9 @@ import { authDataSource } from "../../../core/dataSource/remoteDataSource/auth";
 import { loggedIn } from "../../../core/dataSource/localDataSource/user";
 import { local } from "../../../core/helpers/localstorage";
 import { useDispatch } from "react-redux";
-import { gapi } from "gapi-script";
+import { gapi } from "gapi-script"; //this is required to use sign in with google
 
-const GOOGLE_CLIENT_ID =
+ const GOOGLE_CLIENT_ID =
   "80417416444-mc1emnb4r8o1eph2f3note9p7vubvlen.apps.googleusercontent.com";
 
 const LogIn = () => {
@@ -147,16 +147,19 @@ const LogIn = () => {
               <i>Password</i>
             </div>
 
-            <div className="inputBox google-sign-in">
-              <p>-------- or sign in with --------</p>
-              <div className="google-button" onClick={handleGoogleLogin}>
-                <img
-                  src="./images/productIcons/google-icon.png"
-                  alt="google_logo"
-                />
-                <p>Google</p>
-              </div>
-            </div>
+                {
+              /* 
+              <div className="inputBox google-sign-in">
+                <p>-------- or sign in with --------</p>
+                <div className="google-button" onClick={handleGoogleLogin}>
+                  <img src="./images/productIcons/google-icon.png" alt="google_logo" />
+                  <p>Google</p>
+                </div>
+              </div> 
+              */
+                }
+
+            
             {error && <p className="error">{error}</p>}
             {message && <p className="message">{message}</p>}
             <div className="inputBox">
