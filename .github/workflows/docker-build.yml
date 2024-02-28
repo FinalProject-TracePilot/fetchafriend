@@ -25,12 +25,7 @@ jobs:
           docker build -t ${{ secrets.DOCKER_USERNAME }}/frontend:${{ env.VERSION }} ./frontend
           docker push ${{ secrets.DOCKER_USERNAME }}/frontend:${{ env.VERSION }}
 
-      - name: Build and push backend Docker image
+      - name: Build and push backend Docker image (Including MongoDB)
         run: |
           docker build -t ${{ secrets.DOCKER_USERNAME }}/backend:${{ env.VERSION }} ./backend
           docker push ${{ secrets.DOCKER_USERNAME }}/backend:${{ env.VERSION }}
-
-      - name: Build and push MongoDB Docker image
-        run: |
-          docker build -t ${{ secrets.DOCKER_USERNAME }}/mongodb:${{ env.VERSION }} ./mongodb
-          docker push ${{ secrets.DOCKER_USERNAME }}/mongodb:${{ env.VERSION }}
