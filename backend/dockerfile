@@ -27,7 +27,7 @@ RUN npm install -g nodemon
 COPY . .
 
 # Your application's default port, adjust if it's different
-EXPOSE 8000
+EXPOSE 80
 
 # MongoDB port
 EXPOSE 27017
