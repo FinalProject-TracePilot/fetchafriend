@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: frontend
-          image: waelganem/frontend:2.0.14
+          image: waelganem/frontend:2.0.11
           ports:
             - containerPort: 80
 
@@ -39,7 +39,7 @@ spec:
 spec:
   containers:
     - name: backend 
-      image: waelganem/backend:2.0.14
+      image: waelganem/backend:2.0.11
       ports:
         - containerPort: 8000
       env: 
