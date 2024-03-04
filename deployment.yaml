@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: frontend
-          image: waelganem/frontend:2.0.2
+          image: waelganem/frontend:2.0.14
           ports:
             - containerPort: 80
 
@@ -35,12 +35,20 @@ spec:
     metadata:
       labels:
         app: backend
-    spec:
-      containers:
-        - name: backend
-          image: waelganem/backend:2.0.2
-          ports:
-            - containerPort: 8000
+    # ...other parts of your deployment...
+spec:
+  containers:
+    - name: backend 
+      image: waelganem/backend:2.0.14
+      ports:
+        - containerPort: 8000
+      env: 
+        - name: MONGODB_URL
+          valueFrom:
+            secretKeyRef:
+              name: mongodb-secret
+              key: MONGODB_URL
+
 
 ---
 
